@@ -15,22 +15,24 @@ import com.finzly.FXTrading.Service.TradeService;
 
 @RestController
 @RequestMapping("Trade")
-public class TradeController 
-{
-    @Autowired
-    private TradeService tradeservice;
-    
-    
-    @PostMapping("bookTrade")
-    public ResponseEntity<Map<String,String>> bookTrade(@RequestBody FxTrade trade)
-    {
-    	return tradeservice.bookTrade(trade);
-    }
-    
-    @GetMapping("getTrades")
-    public ResponseEntity<Object> getTrade()
-    {
-    	return tradeservice.getTrades();
-    }
+public class TradeController {
+	@Autowired
+	private TradeService tradeservice;
+
+	/**
+	 * Endpoint for booking a trade Specify the HTTP method and endpoint path
+	 */
+	@PostMapping("bookTrade")
+	public ResponseEntity<Map<String, String>> bookTrade(@RequestBody FxTrade trade) {
+		return tradeservice.bookTrade(trade);
+	}
+
+	/**
+	 * Endpoint for retrieving trades Specify the HTTP method and endpoint path
+	 */
+	@GetMapping("getTrades")
+	public ResponseEntity<Object> getTrade() {
+		return tradeservice.getTrades();
+	}
 
 }
