@@ -1,10 +1,9 @@
 package com.finzly.FXTrading.Model;
 
-//import com.finzly.FXTrading.Service.TradeService;
-
-public class FxTrade
-{
-	//attributes
+public class FxTrade {
+	/*
+	 * attributes
+        */
 	protected static double Rate = 66.00;
 	private static int count = 0;
 	private int tradeNo;
@@ -13,73 +12,73 @@ public class FxTrade
 	protected double Amount;
 	private double ConvertedAmount;
 
-	
-	//Default CONSTRUCTOR
+	// Default constructor
 	public FxTrade()
 	{
-		
-	}
-	//Parameterized CONTRUCTORS
+        }
+    // Parameterized constructor
 	public FxTrade(String CustomerName, String CurrencyPair, double Amount, double ConvertedAmount) 
 	{
-		
+
 		this.tradeNo = ++count;
 		this.CustomerName = CustomerName;
 		this.CurrencyPair = CurrencyPair;
 		this.Amount = Amount;
 		this.ConvertedAmount = ConvertedAmount;
-		
-	}
-   //GETTERS And SETTERS
-	public String getName() {
+        }
+
+	// getters and setters
+	public String getName() 
+	{
 		return CustomerName;
 	}
-	
-	public void setName(String name) {
+
+	public void setName(String name)
+	{
 		this.CustomerName = name;
 	}
-	
-	
 
-	public String getCurrencyPair() {
+	public String getCurrencyPair()
+	{
 		return CurrencyPair;
 	}
-	
-	public void setCurrencyPair(String currencyPair) {
+
+	public void setCurrencyPair(String currencyPair)
+	{
 		this.CurrencyPair = currencyPair;
 	}
-	
 
-	
-	public double getAmount() {
+	public double getAmount() 
+	{
 		return Amount;
 	}
-	
+
 	public void setAmount(double amount) {
 		this.Amount = amount;
 	}
-	
 
-	public static double getRate() {
+	public static double getRate()
+	{
 		return Rate;
 	}
-	
-	public double getConvertedAmount() {
+
+	public double getConvertedAmount()
+	{
 		return ConvertedAmount;
 	}
-	public void setConvertedAmount(double convertedAmount) {
+
+	public void setConvertedAmount(double convertedAmount) 
+	{
 		this.ConvertedAmount = convertedAmount;
 	}
 
-	
-   //toString method overriding
+	// toString method overriding
 	@Override
-    public String toString()
-    {
-		return tradeNo + "\t" + CurrencyPair.toUpperCase() + "\t" + CustomerName + "\t" + ConvertedAmount + "\t" + getRate();
-    }
-
-
-	
+	public String toString()
+	{
+	return tradeNo + "\t" + CurrencyPair.toUpperCase() + "\t"
+	+ CustomerName + "\t" + ConvertedAmount + "\t"
+	+ getRate();
+	}
 
 }
